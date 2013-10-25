@@ -3,9 +3,9 @@
 Let's create an app that models an online cookbook application.
 
 * Fork this repo and clone it as per usual
-* Generate padrino models that follows the given model format:
-* Generate an admin system that gives you the basic CRUD actions to create the values in your system.
-* Generate padrino controllers to action a public-facing website. You wont need to implement a full CRUD system for your visitors; they wont be able to delete for example. Plan your application and think about what actions they will be able to see.
+* Generate padrino models as per your model design
+* Use the db/seeds.rb to create models.
+* Generate padrino controllers to action a public-facing website. Implement a full CRUD system for your visitors. Plan your application and think about what actions they will be able to see.
 * Create views for your actions with nice layouts, CSS and clean HTML
 * Nest your routes so that any models that are dependent on other models include their parent in the URL
 * Similarly, nest any dependent models in your forms using fields_for and accepts_nested_attributes_for.
