@@ -25,6 +25,7 @@ group :test do
   gem 'cucumber'
   gem 'rack-test', :require => 'rack/test'
   gem 'database_cleaner'
+  gem 'factory_girl'
 end
 
 gem 'pry-byebug'
