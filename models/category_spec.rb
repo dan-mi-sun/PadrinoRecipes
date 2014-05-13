@@ -4,7 +4,7 @@ require 'spec_helper'
 
     describe "sub categories" do
       before do
-      @vege =  DietaryRequirements.create(:name => 'Vegetarian')
+      @vege =  DietaryRequirement.create(:name => 'Vegetarian')
       @french =  Cuisine.create(:name => 'French')
       end
 
@@ -12,7 +12,7 @@ require 'spec_helper'
         # asserts_equals 2, Category.count
         expect(Category.count).to be(2)
         expect(Cuisine.first).to eq(@french)
-        expect(DietaryRequirements.first).to eq(@vege)
+        expect(DietaryRequirement.first).to eq(@vege)
       end
     end
   end
