@@ -1,3 +1,0 @@
-class DietaryRequirements < Category
-  
-end
