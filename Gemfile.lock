@@ -16,12 +16,17 @@ GEM
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
     builder (3.2.2)
+    byebug (2.7.0)
+      columnize (~> 0.3)
+      debugger-linecache (~> 1.2)
     capybara (2.2.1)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    coderay (1.1.0)
+    columnize (0.8.9)
     cucumber (1.3.15)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
@@ -29,6 +34,7 @@ GEM
       multi_json (>= 1.7.5, < 2.0)
       multi_test (>= 0.1.1)
     database_cleaner (1.2.0)
+    debugger-linecache (1.2.0)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     gherkin (2.12.2)
@@ -41,6 +47,7 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    method_source (0.8.2)
     mime-types (1.25.1)
     mini_portile (0.5.3)
     minitest (5.3.3)
@@ -84,6 +91,13 @@ GEM
     padrino-support (0.12.1)
       activesupport (>= 3.1)
     polyglot (0.3.4)
+    pry (0.9.12.6)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
+    pry-byebug (1.3.2)
+      byebug (~> 2.7)
+      pry (~> 0.9.12)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -102,6 +116,7 @@ GEM
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    slop (3.5.0)
     sqlite3 (1.3.9)
     thor (0.18.1)
     thread_safe (0.3.3)
@@ -126,6 +141,7 @@ DEPENDENCIES
   database_cleaner
   erubis (~> 2.7.0)
   padrino (= 0.12.1)
+  pry-byebug
   rack-test
   rake
   rspec

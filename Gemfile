@@ -27,6 +27,8 @@ group :test do
   gem 'database_cleaner'
 end
 
+gem 'pry-byebug'
+
 # Padrino Stable Gem
 gem 'padrino', '0.12.1'
 
