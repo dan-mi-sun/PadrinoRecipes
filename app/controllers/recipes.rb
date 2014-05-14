@@ -9,6 +9,7 @@ PadrinoRecipies::App.controllers :recipes do
 
   get :new do
     @recipe = Recipe.new
+    3.times { @recipe.ingredient_recipes.build(:ingredient => Ingredient.new) }
     render :'recipes/new'
   end
 
