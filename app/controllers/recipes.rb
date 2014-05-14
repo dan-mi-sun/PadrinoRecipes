@@ -17,6 +17,7 @@ PadrinoRecipies::App.controllers :recipes do
     @recipe.save!
 
     flash[:notice] = "Your recipe has been saved"
+    redirect "/"
   end
 
 end
