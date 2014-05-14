@@ -28,7 +28,30 @@ describe "RecipesController" do
         :instructions => Faker::Lorem.words(50).join(" "),
         :preparation_time => rand(180),
         :cooking_time => rand(90),
-        :serves => rand(10)
+        :serves => rand(10),
+        :ingredient_recipes_attributes => [
+          {:qty => "200g", 
+            :ingredient_attributes => {
+            :name => "Flour",
+            :image_url => Faker::Internet.url,
+            :description => Faker::Lorem.words(50).join(" ")
+            }
+          },
+          {:qty => 3,
+            :ingredient_attributes => {
+            :name => "Eggs",
+            :image_url => Faker::Internet.url,
+            :description => Faker::Lorem.words(50).join(" ")
+            }
+          },
+          {:qty => "400g",
+            :ingredient_attributes => {
+            :name => "Sugar",
+            :image_url => Faker::Internet.url,
+            :description => Faker::Lorem.words(50).join(" ")
+            }
+          }
+        ]
         }        
       }
       
@@ -37,6 +60,15 @@ describe "RecipesController" do
 
     it "Should create the Recipe, IngredientRecipe and INgredient in one hit" do
       expect(Recipe.count).to eq(1)
+      expect(Ingredient.count).to eq(3)
+      expect(IngredientRecipe.count).to eq(3)
+
+      recipe = Recipe.first
+      recipe.ingredient_recipes.length.should eq(3)
+      recipe.ingredients.length.should eq(3)
+      expect(recipe.ingredients.first.name).to eq("Flour")
+      expect(recipe.ingredients.second.name).to eq("Eggs")
+      expect(recipe.ingredients.third.name).to eq("Sugar")
     end
 
     it "should redirect to the homepage" do
