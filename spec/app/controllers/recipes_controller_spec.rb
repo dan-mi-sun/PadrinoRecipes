@@ -1,11 +1,25 @@
 require 'spec_helper'
 
 describe "RecipesController" do
-  before do
-    get "/"
+  
+  describe "GET to :new" do
+    before do
+    #Setup code
+      get '/recipes/new'
+    end
+    #This is a test
+    it "give us a status code of 200" do
+    #Expectations
+      expect(last_response.status).to eq(200)
+      expect(last_response.ok?).to(be_true)
+      last_response.status.should eq(200)
+      last_response.ok?.should be_true
+    end
+
   end
 
-  it "returns hello world" do
-    last_response.body.should == "Hello World"
+  describe "POST to :create" do
+
   end
+
 end

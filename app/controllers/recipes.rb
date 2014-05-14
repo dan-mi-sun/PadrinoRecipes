@@ -1,10 +1,14 @@
 PadrinoRecipies::App.controllers :recipes do
   
- get :by_category, :with => :category_id do
-   @category = Category.find(params[:category_id])
-   @recipes = @category.recipes
+  get :by_category, :with => :category_id do
+    @category = Category.find(params[:category_id])
+    @recipes = @category.recipes
 
-   render "recipes/by_category" 
- end
+    render "recipes/by_category" 
+  end
+
+  get :new do
+    200
+  end
 
 end
