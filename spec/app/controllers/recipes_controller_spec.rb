@@ -19,7 +19,16 @@ describe "RecipesController" do
   end
 
   describe "POST to :create" do
+    before do 
+      post '/recipes/create', { :recipe => { :title => "Chocolate Cake" }}
+    end
 
+    it "should save the recipe and redirect me" do
+      expect(Recipe.count).to eq(1)
+      expect(last_response.redirect?).to be true
+      follow_redirect!
+      expect(last_request.url).to be("/")
+    end
   end
 
 end

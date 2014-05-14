@@ -5,10 +5,6 @@ Given(/^there is a recipe categorised as "(.*?)"$/) do |name|
 
 end
 
-Given(/^I am on the homepage$/) do
-  visit('/')
-end
-
 When(/^I select "(.*?)" from the category list$/) do |name|
   save_and_open_page
   click_link name

@@ -8,7 +8,7 @@ Feature: Add A Recipe
     Then a recipe should be created
     
   Scenario: A visitor adds a recipe without providing a title
-    Given that I am  on the homepage
+    Given that I am on the homepage
       And we choose to add a recipe
     When I complete the form without a title
     Then a recipe should not be created

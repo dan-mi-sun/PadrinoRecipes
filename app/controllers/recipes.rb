@@ -8,7 +8,15 @@ PadrinoRecipies::App.controllers :recipes do
   end
 
   get :new do
-    200
+    @recipe = Recipe.new
+    render :'recipes/new'
+  end
+
+  post :create do
+    @recipe = Recipe.new(params[:recipe])
+    @recipe.save!
+
+    flash[:notice] = "Your recipe has been saved"
   end
 
 end

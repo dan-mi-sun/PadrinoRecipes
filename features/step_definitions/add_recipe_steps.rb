@@ -1,16 +1,24 @@
-Given(/^that I am on the homepage$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
 Given(/^I choose to add a recipe$/) do
-  pending # express the regexp above with the code you wish you had
+  click_link "Add a recipe"
 end
 
 When(/^I complete the form with valid information$/) do
-  pending # express the regexp above with the code you wish you had
+  fill_in "Title", :with => "Ginger Biscuits"
+  fill_in "Description", :with => "Add Ginger. Throw in a bowl. Bake. Done"
+  fill_in "Instructions", :with => "Add Ginger. Throw in a bowl. Bake. Done"
+  fill_in "Image url", :with => "http://someimage.com/adhdhj.jpg"
+  fill_in "Preparation time", :with => "90 mins" 
+  fill_in "Cooking time", :with => "90 mins" 
+  fill_in "Serves", :with => 90 
+
+  click_on "Create Recipe"
 end
 
 Then(/^a recipe should be created$/) do
-  pending # express the regexp above with the code you wish you had
+  expect(Recipe.count).to eq(1)
+  Recipe.count.should eq(1)
+
+  expect(page.has_content?("Your recipe has been saved"))
+
 end
 

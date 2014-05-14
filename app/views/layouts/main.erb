@@ -6,7 +6,6 @@
 
     <body>
       <h1>Padrino Recipe</h1>
-      
       <nav>
         <h3>Recipies by Category</h3>
 
@@ -15,9 +14,14 @@
             <li> <%= link_to "#{category.name} Recipes", url_for(:recipes, :by_category, :category_id => category.id) %></li>
           <% end %>
         </ul>
-
+      <%= link_to "Add a recipe", url_for(:recipes, :new) %>
       </nav>
       <%= yield %>
+        <% if flash[:notice] %>
+          <div class="flash">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
 
     </body>
 </html>
