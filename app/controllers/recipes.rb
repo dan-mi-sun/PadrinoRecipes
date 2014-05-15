@@ -1,4 +1,9 @@
 PadrinoRecipies::App.controllers :recipes do
+
+  get :index, :parent => :chef do
+    @recipes = Chef.find(params[:chef_id]).recipes
+    render :'recipes/index'
+  end
   
   get :by_category, :with => :category_id do
     @category = Category.find(params[:category_id])
