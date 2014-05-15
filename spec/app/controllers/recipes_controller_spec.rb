@@ -88,5 +88,30 @@ describe "RecipesController" do
 #      expect(last_request.url).to be("/")
 #    end
 #  end
+  #
+  describe "nested routes" do
+    before do
+      @chef = Chef.create!(:first_name => "Ainsley", :last_name => "Harriot",:image_url => "http://i3.kym-cdn.com/entries/icons/original/000/0...", :biography => "Ainsley Harriott is an English celebrity chef and ...")
+
+      @chef.recipes.create!(:title => "Food 1")
+
+       Recipe.create!(:title => "Some other recipe")
+    end
+
+    describe "GET to chef/:chef_id/recipes" do
+      before do
+        get "/chef/#{@chef.id}/recipes"
+      end
+
+      it "should give us status 200" do
+        expect(last_response.ok?).to be_true
+      end
+
+      it "should only display Food 1" do
+        expect(last_response.body).to match(/Food 1/)
+        expect(last_response.body).not_to match(/Some other recipe/)
+      end
+    end
+  end
 
 end
