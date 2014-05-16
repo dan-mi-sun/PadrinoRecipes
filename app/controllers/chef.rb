@@ -5,8 +5,7 @@ PadrinoRecipies::App.controllers :chef do
    render :'chef/show'
  end
 
- get :index, :with => :id do
-   @chef = Chef.find(params[:id])
+ get :index do
    render :'chef/index'
  end
 

@@ -2,26 +2,34 @@
 <html>
   <head>
     <title>Padrino Recipe</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <%= stylesheet_link_tag :main %>
     </head>
 
     <body>
-      <h1>Padrino Recipe</h1>
-      <nav>
-        <h3>Recipies by Category</h3>
+        <div class="main">
+          <div id="navcontainer">
+            <ul>
+              <li><%= link_to 'Home', url_for(:pages, :home) %></li>
+              <li><%= link_to 'List all Chefs', url_for(:chef, :index) %></li>
+              <li><%= link_to "Add a recipe", url_for(:recipes, :new) %></li>
+              <!--- <li><#%= link_to 'Add an Author', url_for(:authors, :new) %></li>
+              <li><#%= link_to 'List all Authors', url_for(:authors, :index) %></li> -->
+            </ul>
+          </div>
 
-        <ul>
-          <% Category.all.each do |category| %>
-            <li> <%= link_to "#{category.name} Recipes", url_for(:recipes, :by_category, :category_id => category.id) %></li>
+        <h3>Recipies by Category</h3>
+          <ul>
+            <% Category.all.each do |category| %>
+              <li> <%= link_to "#{category.name} Recipes", url_for(:recipes, :by_category, :category_id => category.id) %></li>
           <% end %>
-        </ul>
-      <%= link_to "Add a recipe", url_for(:recipes, :new) %>
-      </nav>
-      <%= yield %>
+          </ul>
+        <%= yield %>
         <% if flash[:notice] %>
           <div class="flash">
-            <%= flash[:notice] %>
-          </div>
-        <% end %>
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
 
-    </body>
-</html>
+      </body>
+    </html>
