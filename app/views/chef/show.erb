@@ -1,3 +1,3 @@
-<h3>Display Chef</h3>
+<h3><%= @chef.first_name%> <%= @chef.last_name%></h3>
 
 <%= link_to "All Recipes by this Chef", url(:recipes, :index, :chef_id => @chef.id)  %>
