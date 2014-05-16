@@ -9,7 +9,7 @@ Given(/^there is a recipe that contains "(.*?)"$/) do |name|
 end
 
 Given(/^that I am on a recipe that includes an "(.*?)"$/) do |name|
-  visit "/recipes/by_ingredient/#{@ingred.id}"
+  visit "/ingredient/#{@ingred.id}/recipes"
 end
 
 When(/^I choose to see all recipes including "(.*?)"$/) do |arg1|

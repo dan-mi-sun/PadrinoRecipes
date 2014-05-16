@@ -17,11 +17,11 @@ PadrinoRecipies::App.controllers :recipes do
     render "recipes/by_category" 
   end
 
-  get :by_ingredient, :with => :ingredient_id do
+  get :index, :parent => :ingredient do
     @ingredient = Ingredient.find(params[:ingredient_id])
     @recipes = @ingredient.recipes
 
-    render "recipes/by_ingredient"
+    render :"recipes/index"
   end
 
   get :new do

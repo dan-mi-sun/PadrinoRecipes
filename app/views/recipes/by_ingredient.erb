@@ -6,4 +6,4 @@
       </article>
   <% end %>
 
-  <%= link_to "All Recipes With this Ingredient", url(:recipes, :by_ingredient, :ingredient_id => @ingredient.id) %>
+  <%= link_to "All Recipes With this Ingredient", url(:recipes, :index, :ingredient_id => @ingredient.id) %>

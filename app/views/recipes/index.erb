@@ -5,3 +5,13 @@
     <li><%= recipe.title %></li>
   <% end %>
   </ul>
+
+  <%= link_to "All Recipes With this Ingredient", url(:recipes, :index, :ingredient_id => @ingredient.id) %>
+
+<h1> <%= @ingredient.name %> </h1>
+
+  <% @recipes.each do |recipe| %>
+    <article class="recipe">
+      <%= recipe.title %>
+      </article>
+  <% end %>
