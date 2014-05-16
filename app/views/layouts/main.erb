@@ -1,29 +1,38 @@
 <!DOCTYPE htmll>
 <html>
   <head>
-    <title>Padrino Recipe</title>
+    <title>Padrino We Got Recipes</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <%= stylesheet_link_tag :main %>
     </head>
 
     <body>
+      <header>
+        <h1 class="site-title">We Got Recipes</h1>
         <div class="main">
           <div id="navcontainer">
             <ul>
               <li><%= link_to 'Home', url_for(:pages, :home) %></li>
               <li><%= link_to 'List all Chefs', url_for(:chef, :index) %></li>
-              <li><%= link_to "Add a recipe", url_for(:recipes, :new) %></li>
-              <li><%= link_to 'List all Recipes', url_for(:recipes, :index) %></li>
               <li><%= link_to 'List all Ingredients', url_for(:ingredients, :index) %></li> 
-              <li><%= link_to 'List all Categories', url_for(:categories, :index) %></li> 
+              <li><%= link_to "Add a Recipe", url_for(:recipes, :new) %></li>
+              <li><%= link_to 'List all Recipes', url_for(:recipes, :index) %>
+                <ul>
+                  <li><%= link_to 'List all Categories', url_for(:categories, :index) %></li> 
+                </ul>
+              </li>
             </ul>
           </div>
+
+      </header>
+      <div class="container"> 
         <%= yield %>
         <% if flash[:notice] %>
           <div class="flash">
           <%= flash[:notice] %>
         </div>
       <% end %>
+      </div>
 
       </body>
     </html>
