@@ -14,16 +14,10 @@
               <li><%= link_to 'List all Chefs', url_for(:chef, :index) %></li>
               <li><%= link_to "Add a recipe", url_for(:recipes, :new) %></li>
               <li><%= link_to 'List all Recipes', url_for(:recipes, :index) %></li>
-            <!---   <li><#%= link_to 'List all Authors', url_for(:authors, :index) %></li> -->
+              <li><%= link_to 'List all Ingredients', url_for(:ingredients, :index) %></li> 
+              <li><%= link_to 'List all Categories', url_for(:categories, :index) %></li> 
             </ul>
           </div>
-
-        <h3>Recipies by Category</h3>
-          <ul>
-            <% Category.all.each do |category| %>
-              <li> <%= link_to "#{category.name} Recipes", url_for(:recipes, :by_category, :category_id => category.id) %></li>
-          <% end %>
-          </ul>
         <%= yield %>
         <% if flash[:notice] %>
           <div class="flash">
