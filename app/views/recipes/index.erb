@@ -2,16 +2,14 @@
   
   <ul>
   <% @recipes.each do |recipe| %>
+    <article class="recipe">
     <li><%= recipe.title %></li>
+      </article>
   <% end %>
   </ul>
 
-  <%= link_to "All Recipes With this Ingredient", url(:recipes, :index, :ingredient_id => @ingredient.id) %>
+  <#%= link_to "All Recipes With this Ingredient", url(:recipes, :index, :ingredient_id => @ingredient.id) %>
 
-<h1> <%= @ingredient.name %> </h1>
+<h1> <#%= @ingredient.name %> </h1>
+<h1> <%= @category.name %> Recipes </h1>
 
-  <% @recipes.each do |recipe| %>
-    <article class="recipe">
-      <%= recipe.title %>
-      </article>
-  <% end %>

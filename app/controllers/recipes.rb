@@ -10,11 +10,11 @@ PadrinoRecipies::App.controllers :recipes do
     render :'recipes/index'
   end
   
-  get :by_category, :with => :category_id do
+  get :index, :parent => :category do
     @category = Category.find(params[:category_id])
     @recipes = @category.recipes
 
-    render "recipes/by_category" 
+    render :"recipes/index" 
   end
 
   get :index, :parent => :ingredient do
