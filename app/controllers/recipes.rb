@@ -17,6 +17,13 @@ PadrinoRecipies::App.controllers :recipes do
     render "recipes/by_category" 
   end
 
+  get :by_ingredient, :with => :ingredient_id do
+    @ingredient = Ingredient.find(params[:ingredient_id])
+    @recipes = @ingredient.recipes
+
+    render "recipes/by_ingredient"
+  end
+
   get :new do
     @recipe = Recipe.new
     3.times { @recipe.ingredient_recipes.build(:ingredient => Ingredient.new) }

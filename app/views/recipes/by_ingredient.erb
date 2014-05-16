@@ -1,0 +1,9 @@
+<h1> <%= @ingredient.name %> </h1>
+
+  <% @recipes.each do |recipe| %>
+    <article class="recipe">
+      <%= recipe.title %>
+      </article>
+  <% end %>
+
+  <%= link_to "All Recipes With this Ingredient", url(:recipes, :by_ingredient, :ingredient_id => @ingredient.id) %>
