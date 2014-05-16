@@ -1,14 +1,15 @@
 PadrinoRecipies::App.controllers :recipes do
 
+  get :index do
+    @recipes = Recipe.all
+    render :'recipes/index'
+  end
+
   get :index, :parent => :chef do
     @recipes = Chef.find(params[:chef_id]).recipes
     render :'recipes/index'
   end
 
-  get :index do
-    @recipes = Recipe.all
-    render :'recipes/index'
-  end
   
   get :index, :parent => :category do
     @category = Category.find(params[:category_id])
@@ -36,6 +37,12 @@ PadrinoRecipies::App.controllers :recipes do
 
     flash[:notice] = "Your recipe has been saved"
     redirect "/"
+  end
+
+  get :show, :with => :id, :map => "/recipes" do
+    @recipe = Recipe.find(params[:id])
+    @title = @recipe.title
+    render :'recipes/show'
   end
 
 end

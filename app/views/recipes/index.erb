@@ -3,7 +3,9 @@
   <ul>
   <% @recipes.each do |recipe| %>
     <article class="recipe">
-    <li><%= recipe.title %></li>
+      <li><%= recipe.title %>
+      <%= link_to 'Show', url(:recipes, :show, :id => recipe.id) %>
+      </li>
       </article>
   <% end %>
   </ul>
