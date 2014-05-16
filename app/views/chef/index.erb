@@ -1,1 +1,10 @@
 <h3>Index of Chefs</h3>
+  
+  <ul>
+  <% @chef.each do |chef| %>
+    <li><%= chef.first_name %> 
+    <%= chef.last_name %>
+    <%= link_to 'Show', url(:chef, :show, :id => chef.id ) %>
+    </li>
+  <% end %>
+  </ul>

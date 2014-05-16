@@ -6,6 +6,7 @@ PadrinoRecipies::App.controllers :chef do
  end
 
  get :index do
+   @chef = Chef.all
    render :'chef/index'
  end
 
