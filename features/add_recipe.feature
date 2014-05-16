@@ -1,6 +1,5 @@
 Feature: Add A Recipe
 
-  @wip
   Scenario: A visitor adds a recipe
     Given that I am on the homepage
       And I choose to add a recipe
