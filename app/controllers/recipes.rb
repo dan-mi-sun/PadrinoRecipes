@@ -13,14 +13,14 @@ PadrinoRecipies::App.controllers :recipes do
   get :index, :parent => :category do
     @category = Category.find(params[:category_id])
     @recipes = @category.recipes
-
+    @title = @category.name
     render :"recipes/index" 
   end
 
   get :index, :parent => :ingredient do
     @ingredient = Ingredient.find(params[:ingredient_id])
     @recipes = @ingredient.recipes
-
+    @title = @ingredient.name
     render :"recipes/index"
   end
 

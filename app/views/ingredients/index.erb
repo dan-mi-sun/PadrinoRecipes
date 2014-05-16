@@ -1,1 +1,10 @@
 <h3>Index of Ingredients</h3>
+
+  <li>
+    <% @ingredient.each do |ingred| %>
+      <li><%= ingred.name %>
+      <%= link_to 'Show', url(:ingredients, :show, :id => ingred.id) %>
+      </li>
+    <% end %>
+  </li>
+

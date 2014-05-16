@@ -8,8 +8,9 @@ Given(/^there is a recipe that contains "(.*?)"$/) do |name|
   @recipe.save!
 end
 
-Given(/^that I am on a recipe that includes an "(.*?)"$/) do |name|
-  visit "/ingredient/#{@ingred.id}/recipes"
+
+Given(/^that I am on the "(.*?)" page$/) do |arg1|
+  visit "ingredients/#{@ingred.id}"
 end
 
 When(/^I choose to see all recipes including "(.*?)"$/) do |arg1|

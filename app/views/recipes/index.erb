@@ -1,4 +1,4 @@
-<h3>Recipes</h3>
+<h3> <%= @title %> Recipes</h3>
   
   <ul>
   <% @recipes.each do |recipe| %>
@@ -7,9 +7,3 @@
       </article>
   <% end %>
   </ul>
-
-  <#%= link_to "All Recipes With this Ingredient", url(:recipes, :index, :ingredient_id => @ingredient.id) %>
-
-<h1> <#%= @ingredient.name %> </h1>
-<h1> <%= @category.name %> Recipes </h1>
-
