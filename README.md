@@ -1,24 +1,32 @@
-# Recipe Book App
+# We Got Coders Week 3 Coursework 
 
-Let's create an app that models an online cookbook application.
+We Got Coders is a consultancy that provides experts in agile web development, specialising in Ruby technology.
 
-* Fork this repo and clone it as per usual
-* Generate padrino models as per your model design
-* Use the db/seeds.rb to create models.
-* Generate padrino controllers to action a public-facing website. Implement a full CRUD system for your visitors. Plan your application and think about what actions they will be able to see.
-* Create views for your actions with nice layouts, CSS and clean HTML
-* Nest your routes so that any models that are dependent on other models include their parent in the URL
-* Similarly, nest any dependent models in your forms using fields_for and accepts_nested_attributes_for.
-* Send me a pull request when you're done.
+http://wegotcoders.com/
 
-# Bonus points
+### Padrino Recipe Manager
 
-Bonus points for the following:
+Use the Padrino Framework to build a simple Recipe Manager 
 
-* Well documented and indented code, HTML, CSS or Ruby
-* Covering your models with tests
-* Covering your controllers with tests
-* Creating a comment system for the recipe page
-* Adding the ability to tag recipies
-* Adding the ability to add images
-* Protecting your web app with a 'private beta' password
+## Key Technologies and Techniques:
+- TDD with cucumber and RSpec
+- Padrino 
+- Active Record
+- Nested Attributes and Resources
+
+####Notes from WeGotCoders:
+http://dan-mi-sun.github.io/
+
+http://dan-mi-sun.github.io/wegotcoders/why-code-with-we-got-coders/
+
+http://dan-mi-sun.github.io/wegotcoders/reflections-on-8-weeks-with-we-got-coders/
+
+http://dan-mi-sun.github.io/wegotcoders/reflections-on-12-weeks-with-we-got-coders/
+
+
+####Contact
+twitter: @dan_mi_sun
+
+gmail: dan.mi.sun@gmail.com
+
+uk.linkedin.com/in/danielsundigital/
